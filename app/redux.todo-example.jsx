@@ -2,7 +2,13 @@ var redux = require('redux');
 
 console.log('Starting redux example');
 
-var reducer = (state = {searchText: ''}, action => {
+var stateDefault = {
+	searchText: '',
+	showCompleted: false,
+	todos: []
+}
+
+var reducer = (state = stateDefault, action => {
 
 	return state;
 });
@@ -10,4 +16,4 @@ var reducer = (state = {searchText: ''}, action => {
 var store = redux.createStore(reducer);
 
 var currentState = store.getState();
-console.log('currentState', currentState);
+console.log('currentState', currentState;
