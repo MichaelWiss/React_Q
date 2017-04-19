@@ -9,8 +9,14 @@ var stateDefault = {
 };
 
 var reducer = (state = stateDefault, action) => {
-    
-	return state;
+     switch (action.type) {
+   	case 'CHANGE_NAME':
+   	   return {
+          ...state,
+          name: action.name
+   	   };
+   	   default:
+   	     return state;
 };
 
 var store = redux.createStore(reducer);
