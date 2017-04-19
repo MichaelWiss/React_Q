@@ -18,3 +18,5 @@ ReactDOM.render(
   </Router>,
   document.getElementById('app')
 );
+
+require('./redux-example.jsx');
