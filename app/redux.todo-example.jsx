@@ -22,6 +22,13 @@ var reducer = (state = stateDefault, action) => {
 
 var store = redux.createStore(reducer);
 
+//subscribe to changes
+store.subscribe(() => {
+   var state = store.getState();
+
+   document.getElementById('app').innerHTML = state.searchText;
+});
+
 var currentState = store.getState();
 console.log('currentState', currentState);
 
