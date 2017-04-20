@@ -29,6 +29,7 @@ var unsubscribe = store.subscribe(() => {
 	var state = store.getState();
 
 	console.log('Name is', state.name);
+	document.getElementById('app').innerHTML = state.name;
 })
 
 var currentState = store.getState();
