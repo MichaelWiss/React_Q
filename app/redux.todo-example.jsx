@@ -29,12 +29,23 @@ store.subscribe(() => {
    document.getElementById('app').innerHTML = state.searchText;
 });
 
-var currentState = store.getState();
-console.log('currentState', currentState);
+
+console.log('currentState', store.getState());
 
 store.dispatch({
 	type: 'CHANGE_SEARCH_TEXT',
 	searchText: 'work'
 });
+
+store.dispatch({
+	type: 'CHANGE_SEARCH_TEXT',
+	searchText: 'dog'
+});
+
+store.dispatch({
+	type: 'CHANGE_SEARCH_TEXT',
+	searchText: 'something else'
+});
+
 console.log('searchText should be "work"', store.getState());
 
