@@ -10,11 +10,11 @@ var stateDefault = {
 
 var reducer = (state = stateDefault, action) => {
     switch(action.type) {
-    	case 'CHANGE_SEARCH_TEXT';
+    	case 'CHANGE_SEARCH_TEXT':
     	  return {
     	  	 ...state,
     	  	 searchText: action.searchText
-    	  }
+    	  };
     	  default:
     	  return state;
     }
