@@ -23,7 +23,7 @@ var store = redux.createStore(reducer);
 //subscribe to changes
 store.subscribe(() => {
 	var state = store.getState();
-	
+	console.log('Name is', state.name);
 })
 
 var currentState = store.getState();
@@ -35,4 +35,7 @@ store.dispatch({
 	name: 'Michael'
 });
 
-console.log('Name should be Michael', store.getState());
+store.dispatch({
+   type: 'CHANGE_NAME',
+   name: 'Emily'
+});
