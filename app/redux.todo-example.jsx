@@ -20,7 +20,9 @@ var reducer = (state = stateDefault, action) => {
     }
 };
 
-var store = redux.createStore(reducer);
+var store = redux.createStore(reducer, redux.componse(
+     window.devToolsExtension ? window.devToolsExtension() : f => f
+));
 
 //subscribe to changes
 store.subscribe(() => {
