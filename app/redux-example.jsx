@@ -15,6 +15,10 @@ var reducer = (state = stateDefault, action) => {
           ...state,
           name: action.name
    	   };
+   	   case 'ADD_HOBBY':
+   	   return {
+
+   	   };
    	   default:
    	     return state;
    }
@@ -44,7 +48,10 @@ store.dispatch({
 	name: 'Michael'
 });
 
-unsubscribe();
+store.dispatch({
+   type: 'ADD_HOBBY',
+   hobby: 'Running'
+});
 
 store.dispatch({
    type: 'CHANGE_NAME',
