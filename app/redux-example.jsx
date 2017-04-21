@@ -78,6 +78,16 @@ store.dispatch({
 });
 
 store.dispatch({
+   type: 'ADD_HOBBY',
+   hobby: 'Walking'
+});
+
+store.dispatch({
+   type: 'REMOVE_HOBBY',
+   id: 2
+});
+
+store.dispatch({
    type: 'CHANGE_NAME',
    name: 'Emily'
 });
