@@ -6,6 +6,7 @@ var stateDefault = {name: 'Anonymous'};
   name: 'Anonymous',
   hobbies: []
 };
+var nextHobbyId = 1;
 var reducer = (state = stateDefault, action) => {
    // state = state || {name: 'Anonymous'};
   
@@ -17,7 +18,14 @@ var reducer = (state = stateDefault, action) => {
    	   };
    	   case 'ADD_HOBBY':
    	   return {
-
+          ...state,
+          hobbies: [
+            ...state.hobbies,
+            {
+              id: nextHobbyId++,
+              hobby: action.hobby	
+            }
+          ]
    	   };
    	   default:
    	     return state;
