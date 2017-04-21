@@ -102,4 +102,10 @@ store.dispatch({
 	type: 'ADD_MOVIE',
 	title: 'Mad Max',
 	genre: 'Action'
+});
+
+store.dispatch({
+	type: 'REMOVE_MOVIE',
+	name: id: 2
+});
 })
