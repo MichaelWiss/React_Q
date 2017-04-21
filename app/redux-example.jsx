@@ -4,9 +4,11 @@ console.log('Starting redux example');
 
 var stateDefault = {
   name: 'Anonymous',
-  hobbies: []
+  hobbies: [],
+  movies: []
 };
 var nextHobbyId = 1;
+var nextMovieId = 1;
 var reducer = (state = stateDefault, action) => {
    // state = state || {name: 'Anonymous'};
   
@@ -27,6 +29,18 @@ var reducer = (state = stateDefault, action) => {
             }
           ]
    	   };
+   	   case 'ADD_MOVIE':
+   	   return {
+   	   	  ...state,
+   	   	  movies: [
+            ...state.movies,
+            {
+            	id: nextMovieId++,
+            	title: action.title,
+            	genre: action.genre
+            }
+   	   	  ]
+   	   }
    	   default:
    	     return state;
    }
@@ -67,3 +81,9 @@ store.dispatch({
    type: 'CHANGE_NAME',
    name: 'Emily'
 });
+
+store.dispatch({
+	type: 'ADD_MOVIE',
+	title: 'Mad Max',
+	genre: 'Action'
+})
