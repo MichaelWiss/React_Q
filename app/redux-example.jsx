@@ -2,7 +2,7 @@ var redux = require('redux');
 
 console.log('Starting redux example');
 
-var stateDefault = {name: 'Anonymous'};
+var stateDefault = {
   name: 'Anonymous',
   hobbies: []
 };
