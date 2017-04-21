@@ -29,6 +29,12 @@ var reducer = (state = stateDefault, action) => {
             }
           ]
    	   };
+   	   case 'REMOVE_HOBBY':
+   	     return {
+   	     	...state,
+   	     	hobbies: state.hobbies.filter((hobby) => hobby.id !== action.id)
+               //return hobby.id !== action.id           
+   	     }
    	   case 'ADD_MOVIE':
    	   return {
    	   	  ...state,
