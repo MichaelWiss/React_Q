@@ -67,8 +67,26 @@ var nameReducer = (state= 'Anonymous', action) => {
     }
 };
 
+var hobbiesReducer = (state = [], action) => {
+      switch(action.type) {
+      	case 'ADD_HOBBY':
+   	      return {
+            ...state,
+            {
+              id: nextHobbyId++,
+              hobby: action.hobby	
+            }
+          ];
+          case 'REMOVE_HOBBY':
+         return state.filter((hobby) => hobby.id !== action.id)
+        default:
+         return state;
+     }
+};
+
 var reducer = redux.combineReducers({
-	name: nameReducer
+	name: nameReducer,
+	hobbies: hobbiesReducer
 })
 
 var store = redux.createStore(reducer, redux.compose(
