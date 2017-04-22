@@ -96,7 +96,7 @@ var moviesReducer = (state = [], action) => {
             }
    	   	  ]
     	case "REMOVE_MOVIE":
-    	  return state.movies.filter((movie) => movie.id !== action.id)
+    	  return state.filter((movie) => movie.id !== action.id)
 
     	default: 
     	  return state;
