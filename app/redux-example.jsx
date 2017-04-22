@@ -50,7 +50,7 @@ var oldReducer = (state = stateDefault, action) => {
    	   case 'REMOVE_MOVIE':
    	     return {
    	     	...state,
-   	     	movies: state.movies.filter(movie) => movie.id !== action.id)
+   	     	movies: state.movies.filter((movie) => movie.id !== action.id)
    	     }
    	   default:
    	     return state;
@@ -58,8 +58,17 @@ var oldReducer = (state = stateDefault, action) => {
 
 };
 
+var nameReducer = (state= 'Anonymous', action) => {
+    switch (action.type) {
+    	case 'CHANGE_NAME':
+    	  return action.name
+    	default:
+    	 return state;
+    }
+};
+
 var reducer = redux.combineReducers({
-	
+	name: nameReducer
 })
 
 var store = redux.createStore(reducer, redux.compose(
@@ -119,6 +128,5 @@ store.dispatch({
 
 store.dispatch({
 	type: 'REMOVE_MOVIE',
-	name: id: 1
+	id: 1
 });
-})
