@@ -87,7 +87,17 @@ var hobbiesReducer = (state = [], action) => {
 var moviesReducer = (state = [], action) => {
     switch (action.type) {
     	case 'ADD_MOVIE':
+    	    return [
+            ...state,
+            {
+            	id: nextMovieId++,
+            	title: action.title,
+            	genre: action.genre
+            }
+   	   	  ]
     	case "REMOVE_MOVIE":
+    	  return state.movies.filter((movie) => movie.id !== action.id)
+
     	default: 
     	  return state;
     }
