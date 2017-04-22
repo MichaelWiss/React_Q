@@ -70,7 +70,7 @@ var nameReducer = (state= 'Anonymous', action) => {
 var hobbiesReducer = (state = [], action) => {
       switch(action.type) {
       	case 'ADD_HOBBY':
-   	      return {
+   	      return [
             ...state,
             {
               id: nextHobbyId++,
