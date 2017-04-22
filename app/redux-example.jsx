@@ -84,6 +84,15 @@ var hobbiesReducer = (state = [], action) => {
      }
 };
 
+var moviesReducer = (state = [], action) => {
+    switch (action.type) {
+    	case 'ADD_MOVIE':
+    	case "REMOVE_MOVIE":
+    	default: 
+    	  return state;
+    }
+};
+
 var reducer = redux.combineReducers({
 	name: nameReducer,
 	hobbies: hobbiesReducer
