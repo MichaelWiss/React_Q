@@ -9,7 +9,7 @@ var stateDefault = {
 };
 var nextHobbyId = 1;
 var nextMovieId = 1;
-var reducer = (state = stateDefault, action) => {
+var oldReducer = (state = stateDefault, action) => {
    // state = state || {name: 'Anonymous'};
   
    switch (action.type) {
@@ -58,7 +58,9 @@ var reducer = (state = stateDefault, action) => {
 
 };
 
-
+var reducer = redux.combineReducers({
+	
+})
 
 var store = redux.createStore(reducer, redux.compose(
     window.devToolsExtension ? window.devToolsExtension() : f => f
