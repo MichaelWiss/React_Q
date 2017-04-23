@@ -10,6 +10,8 @@ var stateDefault = {
 var nextHobbyId = 1;
 var nextMovieId = 1;
 
+// Name reducer and action generators
+// ----------------------------------
 
 var nameReducer = (state= 'Anonymous', action) => {
     switch (action.type) {
@@ -19,6 +21,9 @@ var nameReducer = (state= 'Anonymous', action) => {
     	 return state;
     }
 };
+
+// Hobbies reducer and action generators
+// --------------------------------------
 
 var hobbiesReducer = (state = [], action) => {
       switch(action.type) {
