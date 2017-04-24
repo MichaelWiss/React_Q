@@ -129,26 +129,12 @@ store.dispatch(addHobby('Running'));
 
 store.dispatch(addHobby('Walking'));
 
-store.dispatch({
-   type: 'REMOVE_HOBBY',
-   id: 2
-});
+store.dispatch(removeHobby(2));
 
 store.dispatch(changeName('Emily'));
 
-store.dispatch({
-	type: 'ADD_MOVIE',
-	title: 'Mad Max',
-	genre: 'Action'
-});
+store.dispatch(addMovie(Mad Max, Action));
 
-store.dispatch({
-	type: 'ADD_MOVIE',
-	title: 'Rogue One',
-	genre: 'Action'
-});
+store.dispatch(addMovie(Rogue One, Action));
 
-store.dispatch({
-	type: 'REMOVE_MOVIE',
-	id: 1
-});
+store.dispatch(removeMovie(2));
