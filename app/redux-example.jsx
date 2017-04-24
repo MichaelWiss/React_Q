@@ -22,6 +22,13 @@ var nameReducer = (state= 'Anonymous', action) => {
     }
 };
 
+var changeName = (name) => {
+   return {
+   	type : 'CHANGE_NAME',
+   	name
+   }
+};
+
 // Hobbies reducer and action generators
 // --------------------------------------
 
@@ -41,6 +48,9 @@ var hobbiesReducer = (state = [], action) => {
          return state;
      }
 };
+
+// Movie reducer and action generators
+// ----------------------------------
 
 var moviesReducer = (state = [], action) => {
     switch (action.type) {
