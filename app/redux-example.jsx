@@ -133,8 +133,8 @@ store.dispatch(removeHobby(2));
 
 store.dispatch(changeName('Emily'));
 
-store.dispatch(addMovie(Mad Max, Action));
+store.dispatch(addMovie('Mad Max', 'Action'));
 
-store.dispatch(addMovie(Rogue One, Action));
+store.dispatch(addMovie('Rogue One', 'Action'));
 
 store.dispatch(removeMovie(2));
