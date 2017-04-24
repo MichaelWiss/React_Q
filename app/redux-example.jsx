@@ -55,6 +55,13 @@ var addHobby = (hobby) => {
 		hobby
 	}
 };
+
+var removeHobby = (id) => {
+	return {
+		type: 'REMOVE_HOBBY',
+		id
+	}
+}
 // Movie reducer and action generators
 // ----------------------------------
 
@@ -77,12 +84,20 @@ var moviesReducer = (state = [], action) => {
     }
 };
 
-var addMovie = (movie) => {
+var addMovie = (title, genre) => {
 	return {
 		type: 'ADD_MOVIE',
-		movie
+		title,
+		genre
 	}
 };
+
+var removeMovie = (id) => {
+	return {
+		type: 'REMOVE_MOVIE',
+		id
+	}
+}
 
 var reducer = redux.combineReducers({
 	name: nameReducer,
