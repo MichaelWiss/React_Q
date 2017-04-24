@@ -49,6 +49,12 @@ var hobbiesReducer = (state = [], action) => {
      }
 };
 
+var addHobby = (hobby) => {
+	return {
+		type: 'ADD_HOBBY',
+		hobby
+	}
+};
 // Movie reducer and action generators
 // ----------------------------------
 
@@ -69,6 +75,13 @@ var moviesReducer = (state = [], action) => {
     	default: 
     	  return state;
     }
+};
+
+var addMovie = (movie) => {
+	return {
+		type: 'ADD_MOVIE',
+		movie
+	}
 };
 
 var reducer = redux.combineReducers({
@@ -95,10 +108,7 @@ var currentState = store.getState();
 console.log('currentState', currentState);
 
 
-store.dispatch({
-	type: 'CHANGE_NAME',
-	name: 'Michael'
-});
+store.dispatch(changeName('Andrew'));
 
 store.dispatch({
    type: 'ADD_HOBBY',
@@ -115,10 +125,7 @@ store.dispatch({
    id: 2
 });
 
-store.dispatch({
-   type: 'CHANGE_NAME',
-   name: 'Emily'
-});
+store.dispatch(changeName('Emily'));
 
 store.dispatch({
 	type: 'ADD_MOVIE',
