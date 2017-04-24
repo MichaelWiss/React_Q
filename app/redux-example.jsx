@@ -99,11 +99,31 @@ var removeMovie = (id) => {
 	}
 }
 
+// Map reducer and action generators
+// ----------------------------------
+
+var mapReducer = (state = {isFetching: false, url: undefined}, action) => {
+   switch (action.type) {
+   	 case 'START_LOCATION_FETCH':
+   	 return {
+
+   	 };
+   	case 'COMPLETE_LOCATION_FETCH';
+   	 return {
+
+   	 };
+   	 default: 
+   	   return state;
+   }
+};
+
 var reducer = redux.combineReducers({
 	name: nameReducer,
 	hobbies: hobbiesReducer,
-	movies: moviesReducer
+	movies: moviesReducer,
+	map: mapReducer
 })
+
 
 var store = redux.createStore(reducer, redux.compose(
     window.devToolsExtension ? window.devToolsExtension() : f => f
