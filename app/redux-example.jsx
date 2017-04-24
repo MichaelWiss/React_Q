@@ -125,15 +125,9 @@ console.log('currentState', currentState);
 
 store.dispatch(changeName('Andrew'));
 
-store.dispatch({
-   type: 'ADD_HOBBY',
-   hobby: 'Running'
-});
+store.dispatch(addHobby('Running'));
 
-store.dispatch({
-   type: 'ADD_HOBBY',
-   hobby: 'Walking'
-});
+store.dispatch(addHobby('Walking'));
 
 store.dispatch({
    type: 'REMOVE_HOBBY',
