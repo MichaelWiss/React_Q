@@ -20,7 +20,7 @@ var nameReducer = (state= 'Anonymous', action) => {
     	  return action.name
     	default:
     	 return state;
-    }
+    };
 };
 
 var changeName = (name) => {
@@ -43,8 +43,8 @@ var hobbiesReducer = (state = [], action) => {
               hobby: action.hobby	
             }
           ];
-          case 'REMOVE_HOBBY':
-         return state.filter((hobby) => hobby.id !== action.id)
+        case 'REMOVE_HOBBY':
+         return state.filter((hobby) => hobby.id !== action.id);
         default:
          return state;
      }
@@ -54,15 +54,15 @@ var addHobby = (hobby) => {
 	return {
 		type: 'ADD_HOBBY',
 		hobby
-	}
+	};
 };
 
 var removeHobby = (id) => {
 	return {
 		type: 'REMOVE_HOBBY',
 		id
-	}
-}
+	};
+};
 // Movie reducer and action generators
 // ----------------------------------
 
@@ -79,8 +79,7 @@ var moviesReducer = (state = [], action) => {
    	   	  ]
     	case "REMOVE_MOVIE":
     	  return state.filter((movie) => movie.id !== action.id)
-
-    	default: 
+        default: 
     	  return state;
     }
 };
@@ -90,15 +89,15 @@ var addMovie = (title, genre) => {
 		type: 'ADD_MOVIE',
 		title,
 		genre
-	}
+	};
 };
 
 var removeMovie = (id) => {
 	return {
 		type: 'REMOVE_MOVIE',
 		id
-	}
-}
+	};
+};
 
 // Map reducer and action generators
 // ----------------------------------
