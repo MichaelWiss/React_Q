@@ -135,7 +135,10 @@ var completeLocationFetch = (url) => {
 var fetchLocation = () => {
    store.dispatch(startLocationFetch());
 
-   axios.get('http://ipinfo.io').then
+   axios.get('http://ipinfo.io').then(function (res) {
+     var loc = res.data.loc;
+     var baseUrl = 'http://maps.google.com?q='
+   });
 };
 
 var reducer = redux.combineReducers({
