@@ -123,7 +123,7 @@ var mapReducer = (state = {isFetching: false, url: undefined}, action) => {
 var startLocationFetch = () => {
      return {
      	type: 'START_LOCATION_FETCH'
-     }
+     };
 };
 
 var completeLocationFetch = (url) => {
@@ -131,7 +131,7 @@ var completeLocationFetch = (url) => {
 		type: 'COMPLETE_LOCATION_FETCH',
 		url
 	};
-}
+};
 
 var fetchLocation = () => {
    store.dispatch(startLocationFetch());
@@ -149,7 +149,7 @@ var reducer = redux.combineReducers({
 	hobbies: hobbiesReducer,
 	movies: moviesReducer,
 	map: mapReducer
-})
+});
 
 
 var store = redux.createStore(reducer, redux.compose(
@@ -165,9 +165,9 @@ var unsubscribe = store.subscribe(() => {
 	console.log('New state', store.getState());
 
 	if (state.map.isFetching) {
-		document.getELementById('app').innerHTML = 'Loading...';
+	  document.getELementById('app').innerHTML = 'Loading...';
 	} else if (state.map.url) {
-	document.getElementById('app').innerHTML = '<a href="' + state.map.url + '" target="_blank">View Your Location</a>'
+	  document.getElementById('app').innerHTML = '<a href="' + state.map.url + '" target="_blank">View Your Location</a>'
   }
 });
 
