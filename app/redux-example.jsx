@@ -167,9 +167,9 @@ var unsubscribe = store.subscribe(() => {
 	if (state.map.isFetching) {
 		document.getELementById('app').innerHTML = 'Loading...';
 	} else if (state.map.url) {
-	document.getElementById('app').innerHTML = '<a href="' + state.map.url + '"target="_blank">View Your Location</a>'
+	document.getElementById('app').innerHTML = '<a href="' + state.map.url + '" target="_blank">View Your Location</a>'
   }
-})
+});
 
 var currentState = store.getState();
 console.log('currentState', currentState);
