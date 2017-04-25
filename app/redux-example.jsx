@@ -3,11 +3,11 @@ var axios = require('axios');
 
 console.log('Starting redux example');
 
-var stateDefault = {
-  name: 'Anonymous',
-  hobbies: [],
-  movies: []
-};
+// var stateDefault = {
+//   name: 'Anonymous',
+//   hobbies: [],
+//   movies: []
+// };
 var nextHobbyId = 1;
 var nextMovieId = 1;
 
@@ -17,7 +17,7 @@ var nextMovieId = 1;
 var nameReducer = (state= 'Anonymous', action) => {
     switch (action.type) {
     	case 'CHANGE_NAME':
-    	  return action.name
+    	  return action.name;
     	default:
     	 return state;
     };
@@ -159,19 +159,19 @@ var store = redux.createStore(reducer, redux.compose(
 var unsubscribe = store.subscribe(() => {
 	var state = store.getState();
 
-	
-
 	console.log('New state', store.getState());
 
 	if (state.map.isFetching) {
-	  document.getELementById('app').innerHTML = 'Loading...';
-	} else if (state.map.url) {
-	  document.getElementById('app').innerHTML = '<a href="' + state.map.url + '" target="_blank">View Your Location</a>'
+	 document.getElementById('app').innerHTML = 'Loading...';
+  } else if (state.map.url) {
+     document.getElementById('app').innerHTML = '<a href="' + state.map.url + '" target="_blank">View Your Location</a>';
   }
 });
 
 var currentState = store.getState();
 console.log('currentState', currentState);
+
+fetchLocation();
 
 
 store.dispatch(changeName('Andrew'));
