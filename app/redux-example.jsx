@@ -107,9 +107,9 @@ var mapReducer = (state = {isFetching: false, url: undefined}, action) => {
    	 case 'START_LOCATION_FETCH':
    	 return {
        isFetching: true,
-       url undefined
+       url: undefined
    	 };
-   	case 'COMPLETE_LOCATION_FETCH';
+   	case 'COMPLETE_LOCATION_FETCH':
    	 return {
         isFetching: false,
         url: action.url
@@ -163,10 +163,10 @@ var unsubscribe = store.subscribe(() => {
 
 	console.log('New state', store.getState());
 
-	if (state.map.isFetching)
+	if (state.map.isFetching) {
 		document.getELementById('app').innerHTML = 'Loading...';
-} else if (state.map.url) {
-	documentElementById('app').innerHTML = '<a target="_blank">View Your Location</a>'
+	} else if (state.map.url) {
+	document.getElementById('app').innerHTML = '<a href="' + state.map.url + '"target="_blank">View Your Location</a>'
   }
 })
 
