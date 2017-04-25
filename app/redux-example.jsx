@@ -159,10 +159,12 @@ var store = redux.createStore(reducer, redux.compose(
 var unsubscribe = store.subscribe(() => {
 	var state = store.getState();
 
-	console.log('Name is', state.name);
-	document.getElementById('app').innerHTML = state.name;
+	
 
 	console.log('New state', store.getState());
+
+	if (state.map.isFetching)
+		document.getELementById('app').innerHTML = 'Loading...';
 })
 
 var currentState = store.getState();
