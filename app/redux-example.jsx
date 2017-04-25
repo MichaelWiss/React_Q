@@ -138,6 +138,8 @@ var fetchLocation = () => {
    axios.get('http://ipinfo.io').then(function (res) {
      var loc = res.data.loc;
      var baseUrl = 'http://maps.google.com?q='
+
+     store.dispatch(completeLocationFetch(baseUrl + loc));
    });
 };
 
