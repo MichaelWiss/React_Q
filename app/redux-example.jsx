@@ -1,9 +1,10 @@
 var redux = require('redux');
 var axios = require('axios');
 
+console.log('Starting redux example');
 
-
-
+var actions = require('./actions/index');
+var store = require('./store/configureStore').configure();
 
 var unsubscribe = store.subscribe(() => {
 	var state = store.getState();
@@ -20,21 +21,21 @@ var unsubscribe = store.subscribe(() => {
 var currentState = store.getState();
 console.log('currentState', currentState);
 
-fetchLocation();
+actions.fetchLocation();
 
 
-store.dispatch(changeName('Andrew'));
+store.dispatch(actions.changeName('Andrew'));
 
-store.dispatch(addHobby('Running'));
+store.dispatch(actions.addHobby('Running'));
 
-store.dispatch(addHobby('Walking'));
+store.dispatch(actions.addHobby('Walking'));
 
-store.dispatch(removeHobby(2));
+store.dispatch(actions.removeHobby(2));
 
-store.dispatch(changeName('Emily'));
+store.dispatch(actions.changeName('Emily'));
 
-store.dispatch(addMovie('Mad Max', 'Action'));
+store.dispatch(actions.addMovie('Mad Max', 'Action'));
 
-store.dispatch(addMovie('Rogue One', 'Action'));
+store.dispatch(actions.addMovie('Rogue One', 'Action'));
 
-store.dispatch(removeMovie(2));
+store.dispatch(actions.removeMovie(2));
