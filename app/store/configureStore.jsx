@@ -1,3 +1,5 @@
+var redux = require('redux');
+var {nameReducer, hobbiesReducer, moviesReducer, mapReducer} = require('./../reducers/index');
 export configure = () => {
 var reducer = redux.combineReducers({
 	name: nameReducer,
