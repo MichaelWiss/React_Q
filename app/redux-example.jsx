@@ -21,7 +21,7 @@ var unsubscribe = store.subscribe(() => {
 var currentState = store.getState();
 console.log('currentState', currentState);
 
-actions.fetchLocation();
+store.dispatch(actions.fetchLocation());
 
 
 store.dispatch(actions.changeName('Andrew'));
