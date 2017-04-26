@@ -1,7 +1,7 @@
 var redux = require('redux');
 var thunk = require('redux-thunk').default;
 var {nameReducer, hobbiesReducer, moviesReducer, mapReducer} = require('./../reducers/index');
-export configure = () => {
+export var configure = () => {
 var reducer = redux.combineReducers({
 	name: nameReducer,
 	hobbies: hobbiesReducer,
