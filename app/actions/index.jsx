@@ -1,3 +1,6 @@
+var axios = require('axios');
+
+
 export var changeName = (name) => {
    return {
    	type : 'CHANGE_NAME',
